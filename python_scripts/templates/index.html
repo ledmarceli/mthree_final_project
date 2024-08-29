@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,20 +6,11 @@
     <title>Tax Calculator</title>
 </head>
 <body>
-    <h1>Tax Calculator</h1>
-    <form method="post">
-        <label for="income">Enter your total income: $</label>
-        <input type="text" id="income" name="income">
-        <input type="submit" value="Calculate">
+    <h1>Simple Tax Calculator</h1>
+    <form action="/calculate" method="post">
+        <label for="income">Enter your income:</label>
+        <input type="text" id="income" name="income" required>
+        <button type="submit">Calculate Tax</button>
     </form>
-    {% if tax_owed is not none %}
-        <p>
-            {% if tax_owed is string %}
-                {{ tax_owed }}
-            {% else %}
-                Based on an income of ${{ "{:,.2f}".format(request.form['income']) }}, the tax owed is ${{ "{:,.2f}".format(tax_owed) }}.
-            {% endif %}
-        </p>
-    {% endif %}
 </body>
 </html>

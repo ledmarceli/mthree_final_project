@@ -1,29 +1,20 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-def calculate_tax(income):
-    """
-    Calculate the tax owed based on income and predefined tax brackets.
-    """
-    if income <= 10000:
-        return 0
-    elif income <= 50000:
-        return (income - 10000) * 0.10
-    else:
-        return (income - 50000) * 0.20 + (50000 - 10000) * 0.10
-
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    tax_owed = None
-    if request.method == 'POST':
-        try:
-            income = float(request.form['income'])
-            tax_owed = calculate_tax(income)
-        except ValueError:
-            tax_owed = "Invalid input. Please enter a valid number for income."
-    
-    return render_template('index.html', tax_owed=tax_owed)
+    return render_template('index.html')
+
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    try:
+        income = float(request.form['income'])
+        tax_rate = 0.15  # 15% tax rate for simplicity
+        tax = income * tax_rate
+        return render_template('result.html', income=income, tax=tax)
+    except ValueError:
+        return "Please enter a valid number for income."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
