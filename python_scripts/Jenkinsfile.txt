@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+    
+    environment {
+        IMAGE_NAME = 'flask-app'
+        IMAGE_TAG = 'latest'
+        DOCKER_REGISTRY = 'your-docker-registry' // Replace with your Docker registry if you're pushing the image
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Build the Docker image
+                    sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // If you have tests, you can run them here
+                    // For example, sh 'python -m unittest discover -s tests'
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                script {
+                    // Log in to Docker Hub or your Docker registry
+                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                    // Tag the image
+                    sh 'docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}'
+                    // Push the image to the registry
+                    sh 'docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Deploy the container
+                    sh 'docker run -d -p 5000:5000 ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}'
+                }
+            }
+        }
+    }
+}

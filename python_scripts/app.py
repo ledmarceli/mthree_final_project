@@ -17,4 +17,9 @@ def calculate():
         return "Please enter a valid number for income."
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run(host="0.0.0.0", port=5000, debug=True)
+=======
+    app.run(debug=True)
+    app.run(host="0.0.0.0")
+>>>>>>> 801fea383a825020996ff60715ea2b69d3cb0d71
