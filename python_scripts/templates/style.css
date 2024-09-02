@@ -1,0 +1,63 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center all headings and give them a specific color */
+h1, h2, h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Add some padding and a border to paragraphs */
+p {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* Style links to be blue and underline when hovered over */
+a {
+    display: inline-block; /* Makes the link behave like a block-level element */
+    background-color: #3498db; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px;
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Make buttons look more modern with rounded corners and shadows */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

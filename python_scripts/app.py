@@ -9,10 +9,19 @@ def index():
 @app.route('/calculate', methods=['POST'])
 def calculate():
     try:
-        income = float(request.form['income'])
-        tax_rate = 0.15  # 15% tax rate for simplicity
-        tax = income * tax_rate
-        return render_template('result.html', income=income, tax=tax)
+        gross_income = float(request.form['income'])
+        expenses = float(request.form['expenses'])
+        net_income = gross_income-expenses
+        if net_income <= 12750:
+            tax = 0
+        elif net_income <= 50270:
+            tax = (net_income-12750)*0.2
+        elif net_income <= 125140:
+            tax = (50270-12750)*0.2+(net_income-50270)*0.4
+        else:
+            tax = (50270-12750)*0.2+(125140-50270)*0.4+(net_income-125140)*0.45
+        
+        return render_template('result.html', income=gross_income, expenses=expenses, tax=tax)
     except ValueError:
         return "Please enter a valid number for income."
 
