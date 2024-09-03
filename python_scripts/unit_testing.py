@@ -16,17 +16,14 @@ class WebAppTest(unittest.TestCase):
 
     def test_functionality(self):
         driver = self.driver
+        #Wait a moment for the page to load
         time.sleep(2)
         
         # Find fields
         first_name_field = driver.find_element("name", "first_name")
-        print("Found first name")
         last_name_field = driver.find_element("name", "last_name")
-        print("Found last name")
         income_field = driver.find_element("name", "income")
-        print("Found income")
         expenses_field = driver.find_element("name", "expenses")
-        print("Found expenses")
         submit_button = driver.find_element(By.XPATH, "//button[text()='Calculate Tax']")
         
         # Fill fields and submit
@@ -36,8 +33,8 @@ class WebAppTest(unittest.TestCase):
         expenses_field.send_keys("2000")
         submit_button.click()
         
-        # Wait 2 seconds
-        time.sleep(2)
+        # Wait a moment for the page to load
+        time.sleep(1)
         
         # Check if the output is fine
         self.assertIn("Tax Calculation Result", driver.page_source)
