@@ -12,7 +12,9 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1725290409,,"wq"
+|2,0,1725346430,,"wq"
+:q
+|2,0,1725346266,,"q"
 
 # Search String History (newest to oldest):
 
@@ -52,26 +54,245 @@
 |3,0,9,1,1,0,1725290357,"        "
 
 # File marks:
-'0  3  0  ~/python_scripts/requirements.txt
-|4,48,3,0,1725290409,"~/python_scripts/requirements.txt"
-'1  65  49  ~/python_scripts/app.py
-|4,49,65,49,1725290363,"~/python_scripts/app.py"
+'0  15  45  ~/python_scripts/templates/index.html
+|4,48,15,45,1725346430,"~/python_scripts/templates/index.html"
+'1  10  6  ~/python_scripts/templates/index.html
+|4,49,10,6,1725346266,"~/python_scripts/templates/index.html"
+'2  10  6  ~/python_scripts/templates/index.html
+|4,50,10,6,1725346266,"~/python_scripts/templates/index.html"
+'3  7  32  ~/python_scripts/templates/index.html
+|4,51,7,32,1725346255,"~/python_scripts/templates/index.html"
+'4  7  32  ~/python_scripts/templates/index.html
+|4,52,7,32,1725346255,"~/python_scripts/templates/index.html"
+'5  7  32  ~/python_scripts/templates/index.html
+|4,53,7,32,1725346255,"~/python_scripts/templates/index.html"
+'6  7  32  ~/python_scripts/templates/index.html
+|4,54,7,32,1725346255,"~/python_scripts/templates/index.html"
+'7  5  47  ~/python_scripts/Dockerfile
+|4,55,5,47,1725345399,"~/python_scripts/Dockerfile"
+'8  3  0  ~/python_scripts/requirements.txt
+|4,56,3,0,1725290409,"~/python_scripts/requirements.txt"
+'9  65  49  ~/python_scripts/app.py
+|4,57,65,49,1725290363,"~/python_scripts/app.py"
 
 # Jumplist (newest first):
+-'  15  45  ~/python_scripts/templates/index.html
+|4,39,15,45,1725346430,"~/python_scripts/templates/index.html"
+-'  10  6  ~/python_scripts/templates/index.html
+|4,39,10,6,1725346417,"~/python_scripts/templates/index.html"
+-'  10  6  ~/python_scripts/templates/index.html
+|4,39,10,6,1725346266,"~/python_scripts/templates/index.html"
+-'  7  32  ~/python_scripts/templates/index.html
+|4,39,7,32,1725346257,"~/python_scripts/templates/index.html"
+-'  7  32  ~/python_scripts/templates/index.html
+|4,39,7,32,1725346257,"~/python_scripts/templates/index.html"
+-'  7  32  ~/python_scripts/templates/index.html
+|4,39,7,32,1725346255,"~/python_scripts/templates/index.html"
+-'  1  0  ~/python_scripts/templates/index.html
+|4,39,1,0,1725346234,"~/python_scripts/templates/index.html"
+-'  1  0  ~/python_scripts/templates/index.html
+|4,39,1,0,1725346234,"~/python_scripts/templates/index.html"
+-'  1  0  ~/python_scripts/templates/index.html
+|4,39,1,0,1725346234,"~/python_scripts/templates/index.html"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  5  47  ~/python_scripts/Dockerfile
+|4,39,5,47,1725345399,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
+-'  1  0  ~/python_scripts/Dockerfile
+|4,39,1,0,1725345388,"~/python_scripts/Dockerfile"
 -'  3  0  ~/python_scripts/requirements.txt
 |4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  3  0  ~/python_scripts/requirements.txt
+|4,39,3,0,1725290409,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
+-'  1  0  ~/python_scripts/requirements.txt
+|4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
 -'  1  0  ~/python_scripts/requirements.txt
 |4,39,1,0,1725290387,"~/python_scripts/requirements.txt"
 -'  65  49  ~/python_scripts/app.py
 |4,39,65,49,1725290363,"~/python_scripts/app.py"
 -'  65  49  ~/python_scripts/app.py
 |4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  65  49  ~/python_scripts/app.py
+|4,39,65,49,1725290363,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
+-'  1  0  ~/python_scripts/app.py
+|4,39,1,0,1725290351,"~/python_scripts/app.py"
 -'  1  0  ~/python_scripts/app.py
 |4,39,1,0,1725290351,"~/python_scripts/app.py"
 -'  1  0  ~/python_scripts/app.py
 |4,39,1,0,1725290351,"~/python_scripts/app.py"
 
 # History of marks within files (newest to oldest):
+
+> ~/python_scripts/templates/index.html
+	*	1725346430	0
+	"	15	45
+	^	15	46
+	.	15	45
+	+	15	45
+
+> ~/python_scripts/Dockerfile
+	*	1725345398	0
+	"	5	47
+	^	5	48
+	.	5	47
+	+	4	17
+	+	5	47
 
 > ~/python_scripts/requirements.txt
 	*	1725290408	0
