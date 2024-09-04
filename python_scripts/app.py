@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from markupsafe import escape
 import sqlite3
 
@@ -60,6 +60,29 @@ def calculate():
         return render_template('result.html', income=gross_income, expenses=expenses, tax=tax, first_name=first_name, last_name=last_name)
     except ValueError:
         return "Please enter a valid number for income."
+    
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM users')
+    rows = cursor.fetchall()
+    conn.close()
+
+    # Convert the rows to a list of dictionaries
+    data = []
+    for row in rows:
+        data.append({
+            "id": row[0],
+            "first_name": row[1],
+            "last_name": row[2],
+            "gross_income": row[3],
+            "expenses": row[4],
+            "net_income": row[5]
+        })
+
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
