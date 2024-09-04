@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+
+    stages {
+        // Docker build stage
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh '''
+                    echo "Building Docker image..."
+                    pwd
+                    cd /
+                    pwd
+                    cd home/ubuntu/python_scripts
+                    pwd
+                    docker build -t my-docker-image .
+                    '''
+                }
+            }
+        }
+
+        // Docker push stage
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    sh '''
+                    echo "Pushing Docker image to Docker Hub..."
+                    docker tag my-docker-image kenneth1521412/my-docker-image
+                    docker push kenneth1521412/my-docker-image:latest
+                    '''
+                }
+            }
+        }
+
+        // Kubernetes deployment stages
+        stage('Starting Minikube') {
+            steps {
+                script {
+                    sh '''
+                    echo "Starting Minikube..."
+                    minikube delete || true
+                    minikube start
+                    minikube status
+                    
+                    echo "Deploying to Kubernetes..."
+                    cd /
+                    pwd
+                    cd home/ubuntu/minikube
+                    pwd
+                    kubectl apply -f deployment.yaml
+                    kubectl apply -f service.yaml
+                    kubectl get pods
+                    kubectl get services
+                    '''
+                }
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo "Pipeline executed successfully."
+        }
+        failure {
+            echo "The pipeline failed. Please check the logs."
+        }
+    }
+}
+
