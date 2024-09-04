@@ -47,6 +47,8 @@ def calculate():
         else:
             tax = (50270 - 12750) * 0.2 + (125140 - 50270) * 0.4 + (net_income - 125140) * 0.45
 
+        net_income = net_income-tax
+
         # Save the data to the database
         conn = sqlite3.connect('database.db')
         cursor = conn.cursor()
