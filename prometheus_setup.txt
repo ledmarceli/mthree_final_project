@@ -1,0 +1,87 @@
+1. *FIRST ON THE TARGET INSTANCE*
+
+#Download Node Exporter
+
+wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz
+tar xvfz node_exporter-1.5.0.linux-amd64.tar.gz
+cd node_exporter-1.5.0.linux-amd64
+
+#Run it as a background service on port 9100 (CHECK SECURITY GROUPS)
+
+nohup ./node_exporter > node_exporter.log 2>&1 &
+
+
+2. *SECOND ON THE MONITORING INSTANCE*
+
+#download prometheus
+
+sudo apt-get update
+sudo apt-get install -y wget tar
+wget https://github.com/prometheus/prometheus/releases/download/v2.46.0/prometheus-2.46.0.linux-amd64.tar.gz
+tar xvf prometheus-2.46.0.linux-amd64.tar.gz
+cd prometheus-2.46.0.linux-amd64
+
+#move files for simplicity
+
+sudo mv prometheus /usr/local/bin/
+sudo mv promtool /usr/local/bin/
+
+#create dedicated user
+
+sudo useradd --no-create-home --shell /bin/false prometheus
+
+#create directories for prometheus data
+sudo mkdir /etc/prometheus
+sudo mkdir /var/lib/prometheus
+sudo chown prometheus:prometheus /etc/prometheus
+sudo chown prometheus:prometheus /var/lib/prometheus
+
+#move config files
+
+sudo mv prometheus.yml /etc/prometheus/
+sudo mv consoles /etc/prometheus/
+sudo mv console_libraries /etc/prometheus/
+sudo chown -R prometheus:prometheus /etc/prometheus/consoles /etc/prometheus/console_libraries
+
+#Open the prometheus.yml configuration file
+
+sudo vi /etc/prometheus/prometheus.yml
+
+#And edit the job name to target instance and the targets to the <Target IP>:9100
+
+#Create this file and paste:
+
+sudo nano /etc/systemd/system/prometheus.service
+
+[Unit]
+Description=Prometheus
+Documentation=https://prometheus.io/docs/introduction/overview/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+ExecStart=/usr/local/bin/prometheus \
+  --config.file=/etc/prometheus/prometheus.yml \
+  --storage.tsdb.path=/var/lib/prometheus \
+  --web.console.templates=/etc/prometheus/consoles \
+  --web.console.libraries=/etc/prometheus/console_libraries
+
+[Install]
+WantedBy=multi-user.target
+
+
+#Then reload and start:
+
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+sudo systemctl enable prometheus
+
+#check if it is running
+
+sudo systemctl status prometheus
+
+#see the run in 
+
+http://<PROMETHEUS_INSTANCE_IP>:9090/targets
