@@ -38,8 +38,8 @@ This is the final project for the mthree program, developed by @ledmarceli, @mub
   ### The DBMS used for this app is SQLite, as the app is pretty small, we didn't require much out of the database.
   - The database is one single table named *users* to store their inputs. In the following picture, you'll see a better description of this table.
   <img width="799" alt="Database's table" src="https://github.com/user-attachments/assets/67932890-c506-4f90-9c9e-10ca504c88b8">
-  
 </details>
+
 <details>
   <summary>Docker</summary>
   
@@ -199,9 +199,63 @@ This is the final project for the mthree program, developed by @ledmarceli, @mub
   ```
   
 </details>
+
 <details>
   <summary>Grafana & Prometheus</summary>
+
+  ### In order to monitor the cluster, we've developed a dashboard with the help of Grafana & Prometheus to check the cluster's health. We're specially watching:
+  - Instance temperature.
+  - Network usage.
+  - Number of times the network has dropped.
+  - Information save in the database.
+  - CPU usage.
+  
+  ### In the following picture, you can have a look of this dashboard.
+  ![dashbboard](https://github.com/user-attachments/assets/f87996a0-a474-440e-98ea-0e5db82284d9)
 </details>
+
 <details>
   <summary>Testing</summary>
+
+  ### We've also implemented front-end testing with the help of Selenium. This file contains 3 functions:
+  1. Set up: On this function the browser's driver is intialized. See code block.
+
+  ```
+    service = Service(ChromeDriverManager().install())
+    self.driver = webdriver.Chrome(service=service)
+    self.driver.get("http://16.171.20.149:5000")  # Update with your actual Docker container port
+  ```
+
+2. Test: On this function is where the fields are filled up and submit. See code block.
+
+```
+  driver = self.driver
+  #Wait a moment for the page to load
+  time.sleep(2)
+  
+  # Find fields
+  first_name_field = driver.find_element("name", "first_name")
+  last_name_field = driver.find_element("name", "last_name")
+  income_field = driver.find_element("name", "income")
+  expenses_field = driver.find_element("name", "expenses")
+  submit_button = driver.find_element(By.XPATH, "//button[text()='Calculate Tax']")
+  
+  # Fill fields and submit
+  first_name_field.send_keys("Marceli")
+  last_name_field.send_keys("Ciesielski")
+  income_field.send_keys("27000")
+  expenses_field.send_keys("2000")
+  submit_button.click()
+  
+  # Wait a moment for the page to load
+  time.sleep(1)
+  
+  # Check if the output is fine
+  self.assertIn("Tax Calculation Result", driver.page_source)
+```
+3. Tear down: On this function everything is cleaned up after the test is completed, closing the browser opened during the test. See code block.
+
+```
+  self.driver.quit()
+```
 </details>
