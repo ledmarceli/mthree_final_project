@@ -261,20 +261,25 @@ This is the final project for the mthree program, developed by @ledmarceli, @mub
 </details>
 
 <details>
-  <summary>SRE</summary>
+  <summary>SRE Principles</summary>
 
-  ### This section describe all the SRE concepts include in the project.
-  - Github: We used github to have version control, branching and project management tools.
-    - Github Branches: To develop new functionalities in a safe environment. so that, once we're sure that new functionality is working properly, we'd merge with the main branch.
-    - Github Project: We also used github project to get the benefits of using a kanban boards, such as tasks creation, assignation, having a visual view of the state of the project. See final state of the kanban in   the picture
- <img width="1680" alt="Kanban board" src="https://github.com/user-attachments/assets/2415d576-2c68-462c-ae27-ce49ddf0872a">
-
-    - - Jenkins.
-  - Kubernetes.
-  - Kubernetes Cluster
-    - Grafana.
-    - Live Production Python App/Database
-   
-   ### On the following picture, you'll see a flowchart describing the way the components communicate.
-  ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/user-attachments/assets/4d7dfa7f-e07c-4a72-8757-564a9b94b746)
+  1. *Embracing risk:* For this project we accepeted that 100% reliaiblity isn't possible nor cost effective, that's why we decided to give priority to cost (given that we're paying for it) over availability (obviously in a real production set up we'd balance them up).
+  2. *Service Level Objectives:* Our services level objectives were not meassure it, but as we mentioned before, we were only trying to optimize budget and features development as much as possible.
+  3. *Eliminate toil:* Our app pipeline is being completely automated and documented. From its execution to its deployment and monitoring.
+  4. *Monitoring distributed systems:* We're watching the performance of the app through a dashboard built with the help of *Grafana* and *Prometheus*
+  5. *Automation:* As we mentioned before, the complete pipeline is being automated, from its execution to its deployment and monitoring. 
+  6. *Release engineering:* This app is being built, packaged, tested and deployed in a reliable, efficient, and repeatable manner, using technologies/tools like *Git/GitHub, Docker, Jenkins, Kubernetes, Grafana and Prometheus*.
+  7. *Simplicity:* To the development and deployment of this app we've optimized the architecture, pipeline automation and monitoring so there is no redundancies or waste of any resources.
 </details>
+
+<details>
+  <summary>Agile</summary>
+
+  ### For the development of this project we followed an agile methodology:
+  - *Iterative development:* Every component was developed iteratively, focusing on having new features at the end of every sprint, so we all could provide some feedback at the end of it.
+  - *Responding to changes:* Throughout the whole proecess the team had to react to changes, for instance the initial app was different, testing wsn't a requirement, but we implemented anyways, kubernetes were implemented even though they were not a requirement as well, we had to use several instances instead of only 1.
+  - *Individual and Interaction:* Communication and collaboration was really good, everybody helped each other during every sprint. Also, at the beginning and end of the day, we had a short stand-up to either plan the next sprint or sum up the day.
+  - Github Project: We also used github project to get the benefits of using a kanban boards, such as tasks creation, assignation, having a visual view of the state of the project. The final state of the kanban board can be seen in the following picture.
+ <img width="1680" alt="Kanban board" src="https://github.com/user-attachments/assets/2415d576-2c68-462c-ae27-ce49ddf0872a">
+</details>  
+
