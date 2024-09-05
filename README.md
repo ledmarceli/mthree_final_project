@@ -1,6 +1,6 @@
 # mthree Final Project
 
-This is the final project for the mthree program, developed by ledmarceli. The project is a web application built with Flask that calculates and stores users' net income and taxes based on their gross income and expenses.
+This is the final project for the mthree program, developed by @ledmarceli, @mubamba1, @eduarecnam. The project is a web application built with Flask that calculates and stores users' net income and taxes based on their gross income and expenses.
 
 <details>
   <summary>Architecture</summary>
@@ -75,9 +75,9 @@ This is the final project for the mthree program, developed by ledmarceli. The p
   - Requirements
   
   ```
-  Flask==2.3.2
-  MarkupSafe==2.1.3
-  Werkzeug>=2.1.0
+    Flask==2.3.2
+    MarkupSafe==2.1.3
+    Werkzeug>=2.1.0
   ```
 </details>
 
@@ -88,73 +88,115 @@ This is the final project for the mthree program, developed by ledmarceli. The p
   1. *Build Docker Image:* On this stage we make sure we're at the right folder `python_scripts` to then create the docker image, named `my-docker-image` (see the code block)
   
   ```
-  // Docker build stage
-  stage('Build Docker Image') {
-      steps {
-          script {
-              sh '''
-              echo "Building Docker image..."
-              pwd
-              cd /
-              pwd
-              cd home/ubuntu/python_scripts
-              pwd
-              docker build -t my-docker-image .
-              '''
-          }
-      }
-  }
+    // Docker build stage
+    stage('Build Docker Image') {
+        steps {
+            script {
+                sh '''
+                echo "Building Docker image..."
+                pwd
+                cd /
+                pwd
+                cd home/ubuntu/python_scripts
+                pwd
+                docker build -t my-docker-image .
+                '''
+            }
+        }
+    }
   ```
 
   2. *Docker Push Image:* On this stage, the docker image that just been created, is pushed to the Docker Hub. (see code block)
   
   ```
-  // Docker push stage
-  stage('Push Docker Image') {
-      steps {
-          script {
-              sh '''
-              echo "Pushing Docker image to Docker Hub..."
-              docker tag my-docker-image kenneth1521412/my-docker-image
-              docker push kenneth1521412/my-docker-image:latest
-              '''
-          }
-      }
-  }
+    // Docker push stage
+    stage('Push Docker Image') {
+        steps {
+            script {
+                sh '''
+                echo "Pushing Docker image to Docker Hub..."
+                docker tag my-docker-image kenneth1521412/my-docker-image
+                docker push kenneth1521412/my-docker-image:latest
+                '''
+            }
+        }
+    }
   ```
 
 3. *Kubernetes Deployment Stage:* On this stage the docker image is deployed on a Kubernetes cluster with the help of course of the configuration files `deployment.yaml` and `service.yaml` (see code block)
 
 ```
-// Kubernetes deployment stages
-stage('Starting Minikube') {
-    steps {
-        script {
-            sh '''
-            echo "Starting Minikube..."
-            minikube delete || true
-            minikube start
-            minikube status
-            
-            echo "Deploying to Kubernetes..."
-            cd /
-            pwd
-            cd home/ubuntu/minikube
-            pwd
-            kubectl apply -f deployment.yaml
-            kubectl apply -f service.yaml
-            kubectl get pods
-            kubectl get services
-            '''
-        }
-    }
-}
+  // Kubernetes deployment stages
+  stage('Starting Minikube') {
+      steps {
+          script {
+              sh '''
+              echo "Starting Minikube..."
+              minikube delete || true
+              minikube start
+              minikube status
+              
+              echo "Deploying to Kubernetes..."
+              cd /
+              pwd
+              cd home/ubuntu/minikube
+              pwd
+              kubectl apply -f deployment.yaml
+              kubectl apply -f service.yaml
+              kubectl get pods
+              kubectl get services
+              '''
+          }
+      }
+  }
 ```
 
 </details>
 
 <details>
   <summary>Kubernetes</summary>
+
+  ### The app is deployed in a Kubernetes cluster to provide CI/CD and a namespace that's going to be used by Grafana on the next step. To see the configuration file, have a look to the next two code blocks.
+  - Deployment.yaml
+
+  ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: flask-app
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: flask-app
+      template:
+        metadata:
+          labels:
+            app: flask-app
+        spec:
+          containers:
+          - name: flask-container
+            image: kenneth1521412/my-docker-image
+            ports:
+            - containerPort: 5000
+  ```
+  - Service.yaml
+
+  ```
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: app-service
+    spec:
+      type: NodePort
+      selector:
+        app: flask-app
+      ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 5000
+          nodePort: 30236  # You can specify this port or allow Kubernetes to choose one in the 30000-32767 range
+  ```
   
 </details>
 <details>
