@@ -259,3 +259,22 @@ This is the final project for the mthree program, developed by @ledmarceli, @mub
   self.driver.quit()
 ```
 </details>
+
+<details>
+  <summary>SRE</summary>
+
+  ### This section describe all the SRE concepts include in the project.
+  - Github: We used github to have version control, branching and project management tools.
+    - Github Branches: To develop new functionalities in a safe environment. so that, once we're sure that new functionality is working properly, we'd merge with the main branch.
+    - Github Project: We also used github project to get the benefits of using a kanban boards, such as tasks creation, assignation, having a visual view of the state of the project. See final state of the kanban in   the picture
+ <img width="1680" alt="Kanban board" src="https://github.com/user-attachments/assets/2415d576-2c68-462c-ae27-ce49ddf0872a">
+
+    - - Jenkins.
+  - Kubernetes.
+  - Kubernetes Cluster
+    - Grafana.
+    - Live Production Python App/Database
+   
+   ### On the following picture, you'll see a flowchart describing the way the components communicate.
+  ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/user-attachments/assets/4d7dfa7f-e07c-4a72-8757-564a9b94b746)
+</details>
