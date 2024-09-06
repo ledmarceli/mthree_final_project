@@ -1,6 +1,8 @@
 # mthree Final Project
 
-This is the final project for the mthree program, developed by @ledmarceli, @mubamba1, @eduarecnam. The project is a web application built with Flask that calculates and stores users' net income and taxes based on their gross income and expenses.
+This is the final project for the mthree program, developed by @ledmarceli, @mubamba1, @eduarecnam. The project is a web application built with Flask that calculates and stores users' net income and taxes based on their gross income and expenses. The individual ReadMe files are available in this repository under README_Marceli or under the link: https://github.com/mobamba1/mthree_final_project/tree/main
+
+
 
 <details>
   <summary>Architecture</summary>
