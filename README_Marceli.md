@@ -38,7 +38,7 @@ The general underlying structure is shown in the flowchart below:
 
 For the purpose of this project we have used several SRE methodologies to ensure that we have control over the development and implementation process. We intended to adhere to the following SRE principles:
 1. Embracing risk (Agile approach)
-2. Service Level Objectives (Budget consideration, Meetings, Kabana)
+2. Service Level Objectives (Budget consideration, Meetings, Kanban)
 3. Eliminate Toil (Jenkins pipeline)
 4. Monitor Distributed Systems (Monitoring dashboard with Grafana, Prometheus etc.)
 5. Automation (Jenkins pipeline)
@@ -47,7 +47,7 @@ For the purpose of this project we have used several SRE methodologies to ensure
 
 Our implementation involved the following solutions:
 1. Github Repository - this provides version control and allows for receiving code updates from others in a timely and organised manner.
-2. Kabana Dashboard - this helped us define and manage our backlog and tasks.
+2. Kanban Dashboard - this helped us define and manage our backlog and tasks.
 3. Discord group - this facilitated the communication and coding between the group members
 4. Regular Meetings - this facilitated the communication between the group members.
 5. Agile Methodologies - this allowed us to break the project down into manageable sprints, focus and adapt on upcoming and unexpected challenges enabling iterative development and continuous delivery. 
@@ -55,7 +55,7 @@ Our implementation involved the following solutions:
 7. Budget consideration - this helped us choose development resources that allowed us to build a functioning application, while limiting the spending. 
 8. Monitoring tools - this helped us be aware of the state of our application
 
-![Kabana](images_mc/kabana.png)
+![Kanban](images_mc/kabana.png)
 
 ## Front-End
 
